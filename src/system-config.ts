@@ -30,6 +30,8 @@ const barrels: string[] = [
   'app',
   'app/shared',
   /** @cli-barrel */
+  
+  '@ngrx/store'
 ];
 
 const cliSystemConfigPackages: any = {};
@@ -45,6 +47,7 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
+    '@ngrx': 'vendor/@ngrx',
     'main': 'main.js'
   },
   packages: cliSystemConfigPackages

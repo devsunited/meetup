@@ -1,0 +1,11 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+    "command": "/nix/store/wj0kf2f2zy9rwhsvcqg1gxbiw3ih4c5j-nodejs-5.9.0/lib/node_modules/angular-cli/node_modules/.bin/tsc",
+    "isShellCommand": true,
+    "args": ["-w", "-p", "./src"],
+    "showOutput": "silent",
+    "isWatching": true,
+    "problemMatcher": "$tsc-watch"
+}
