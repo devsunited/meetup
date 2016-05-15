@@ -72,10 +72,10 @@ const barrels: string[] = [
   /** @cli-barrel */
 ];
 
-const cliSystemConfigPackages: any = {};
-barrels.forEach((barrelName: string) => {
-  cliSystemConfigPackages[barrelName] = { main: 'index' };
-});
+const cliSystemConfigPackages = barrels.reduce( ( packages, barrelName: string ) => {
+  packages[ barrelName ] = { main: 'index' };
+  return packages
+}, {} );
 
 /** Type declaration for ambient System. */
 declare var System: any;
