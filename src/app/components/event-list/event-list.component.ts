@@ -14,7 +14,12 @@ import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
       <md-card-title>{{ title }}</md-card-title>
       <md-card-content>
         <md-list>
-          <md-list-item *ngFor="let event of eventList"></md-list-item>
+          <md-list-item *ngFor="let event of eventList">
+            <a md-line href=""><h4> {{event.$key}} </h4></a>
+            <p md-line>
+              About the event..... Lorem ipsum babka stara
+            </p>
+          </md-list-item>
         </md-list>
       </md-card-content>
     </md-card>
@@ -22,6 +27,9 @@ import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
   styles: [`
     :host > md-card{
       margin-bottom: 1rem;
+    }
+    :host p[md-line]{
+     padding-bottom: 1rem;
     }`
   ]
 })
