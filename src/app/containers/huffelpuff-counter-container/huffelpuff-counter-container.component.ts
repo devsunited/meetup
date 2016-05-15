@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import { Store } from '@ngrx/store';
 import { INCREMENT, DECREMENT, RESET } from '../../reducers/huffelpuff-counter';
@@ -14,6 +15,7 @@ import { AppState } from '../../shared/state';
   template: `
     <du-huffelpuff-counter
       [count]="counter | async"
+      [eventsList]="events | async"
       (increment)="increment()"
       (decrement)="decrement()"
       (reset)="reset()"
@@ -25,9 +27,12 @@ export class HuffelpuffCounterContainerComponent {
 
   counter: Observable<number>;
 
-  constructor(public store: Store<AppState>){
+  events: FirebaseListObservable<any[]>;
+
+  constructor(public store: Store<AppState>, af: AngularFire){
     // using string we have to explicitly add type
     // this.counter = store.select<number>('huffelpuffCounter');
+    this.events = af.database.list('/events');
     this.counter = store.select(state => state.huffelpuffCounter);
   }
 

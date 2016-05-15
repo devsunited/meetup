@@ -8,6 +8,11 @@ import { MdButton } from '@angular2-material/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
   directives: [MdButton],
   template: `
+    <ul *ngFor="let event of eventsList">
+      <li class="text">
+        {{event.$key}}
+      </li>
+    </ul>
     <h4>Withdraw like Mario</h4>
     <button md-raised-button color="primary" (click)="increment.emit()">Increment</button>
     <div>{{ count | currency:'HUF':true:'1.2-2'}} <code>Huffelpuff</code></div>
@@ -18,7 +23,9 @@ import { MdButton } from '@angular2-material/button';
 })
 export class HuffelpuffCounterComponent {
 
+
   @Input() count: number = 0;
+  @Input() eventsList: any = undefined;
   @Output() increment = new EventEmitter<void>();
   @Output() decrement = new EventEmitter<void>();
   @Output() reset = new EventEmitter<void>();
