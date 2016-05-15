@@ -4,7 +4,9 @@
 /** Map relative paths to URLs. */
 const map: any = {
   '@angular2-material': 'vendor/@angular2-material',
-  '@ngrx': 'vendor/@ngrx'
+  '@ngrx': 'vendor/@ngrx',
+  'firebase': 'vendor/firebase/lib/firebase-web.js',
+  'angularfire2': 'vendor/angularfire2'
 };
 
 /** User packages configuration. */
@@ -12,6 +14,10 @@ const packages: any = {
   '@ngrx/store': {
     format: 'cjs',
     main: 'index.js'
+  },
+  angularfire2: {
+    format: 'cjs',
+    main: 'angularfire2.js'
   },
   '@angular2-material/core': {
     format: 'cjs',
