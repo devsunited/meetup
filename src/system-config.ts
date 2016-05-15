@@ -10,7 +10,22 @@ const map: any = {
 };
 
 /** User packages configuration. */
-const packages: any = {
+const materialPackages:string[] = [
+  'core',
+  'toolbar',
+  'icon',
+  'button',
+  'sidenav',
+  'list',
+  'card',
+  'input',
+  'radio',
+  'checkbox'
+];
+const packages: any = Object.assign(
+  {},
+  createCustomConfig('@angular2-material',materialPackages),
+  {
   '@ngrx/store': {
     format: 'cjs',
     main: 'index.js'
@@ -18,20 +33,18 @@ const packages: any = {
   angularfire2: {
     format: 'cjs',
     main: 'angularfire2.js'
-  },
-  '@angular2-material/core': {
-    format: 'cjs',
-    main: 'core.js'
-  },
-  '@angular2-material/checkbox': {
-    format: 'cjs',
-    main: 'checkbox.js'
-  },
-  '@angular2-material/button': {
-    format: 'cjs',
-    main: 'button.js'
   }
-};
+});
+
+function createCustomConfig(packageRoot: string, packages: string[]): any {
+  return packages.reduce((packageConfig: any, packageName: string) => {
+    packageConfig[`${packageRoot}/${packageName}`] = {
+      format: 'cjs',
+      main: packageName
+    };
+    return packageConfig;
+  }, {});
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************

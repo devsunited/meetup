@@ -6,6 +6,27 @@
   <base href="/">
   {{content-for 'head'}}
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+  <script defer src="//code.getmdl.io/1.1.3/material.min.js"></script>
+  <style>
+    du-app{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /*flex-direction: column;*/
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    du-app > .mdl-spinner{
+      width: 10rem;
+      height: 10rem;
+    }
+  </style>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Service worker support is disabled by default.
@@ -21,7 +42,10 @@
   -->
 </head>
 <body>
-  <du-app>Loading Pussycat!...</du-app>
+  <du-app>
+    <!-- MDL Spinner Component -->
+    <div class="mdl-spinner mdl-js-spinner is-active"></div>
+  </du-app>
 
   <script src="vendor/es6-shim/es6-shim.js"></script>
   <script src="vendor/reflect-metadata/Reflect.js"></script>
