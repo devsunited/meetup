@@ -1,15 +1,18 @@
 import { Component, EventEmitter, Output, Input, ChangeDetectionStrategy } from '@angular/core';
+import { MdButton } from '@angular2-material/button';
+
 
 @Component({
   moduleId: module.id,
   selector: 'du-huffelpuff-counter',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  directives: [MdButton],
   template: `
     <h4>Withdraw like Mario</h4>
-    <button (click)="increment.emit()">Increment</button>
+    <button md-raised-button color="primary" (click)="increment.emit()">Increment</button>
     <div>{{ count | currency:'HUF':true:'1.2-2'}} <code>Huffelpuff</code></div>
-    <button (click)="decrement.emit()">Decrement</button>
-    <button (click)="reset.emit()">Reset</button>
+    <button md-raised-button color="warn" (click)="decrement.emit()">Decrement</button>
+    <button md-raised-button color="accent" (click)="reset.emit()">Reset</button>
   `,
   styles: []
 })
