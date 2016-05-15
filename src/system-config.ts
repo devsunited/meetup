@@ -71,6 +71,7 @@ const barrels: string[] = [
   'app/containers',
   'app/components/event-list',
   'app/components/member-list',
+  'app/containers/event-list-container',
   /** @cli-barrel */
 ];
 
