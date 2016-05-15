@@ -1,3 +1,6 @@
 export interface AppState {
-  huffelpuffCounter: number;
+  huffelpuffCounter: {
+    counter: number;
+    events: any;
+  };
 }

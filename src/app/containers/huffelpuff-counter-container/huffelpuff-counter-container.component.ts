@@ -14,6 +14,7 @@ import { AppState } from '../../shared/state';
   template: `
     <du-huffelpuff-counter
       [count]="counter | async"
+      [eventsList]="events | async"
       (increment)="increment()"
       (decrement)="decrement()"
       (reset)="reset()"
@@ -25,10 +26,12 @@ export class HuffelpuffCounterContainerComponent {
 
   counter: Observable<number>;
 
+  events: Observable<any[]>;
+
   constructor(public store: Store<AppState>){
     // using string we have to explicitly add type
-    // this.counter = store.select<number>('huffelpuffCounter');
-    this.counter = store.select(state => state.huffelpuffCounter);
+    this.events = store.select(state => state.huffelpuffCounter.events)
+    this.counter = store.select(state => state.huffelpuffCounter.counter);
   }
 
   increment(){

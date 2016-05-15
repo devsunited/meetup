@@ -3,23 +3,42 @@ import {Reducer, Action} from '@ngrx/store';
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
+export const RECEIVED_FROM_EVENTS = 'RECEIVED_FROM_EVENTS';
 
-const initState = 0;
+const initState = {
+  counter: 0,
+  events: [],
+};
 const oneHuffelpuff = 100000;
 
-export const huffelpuffCounter:Reducer<number> = (state:number = initState, action:Action) => {
+type StateShape = {
+  counter: number;
+  events: any;
+}
+
+export const huffelpuffCounter:Reducer<StateShape> = (state: StateShape = initState, action:Action) => {
 
   switch (action.type) {
     case INCREMENT:
-      return state + oneHuffelpuff;
+      return Object.assign({}, state, {
+        counter: state.counter + oneHuffelpuff
+      });
 
     case DECREMENT:
-      return state - oneHuffelpuff;
+      return Object.assign({}, state, {
+        counter: state.counter - oneHuffelpuff
+      });
 
     case RESET:
-      return 0;
+      return Object.assign({}, state, {
+        counter: 0
+      });
+
+    case RECEIVED_FROM_EVENTS:
+      return Object.assign({}, state, { events: action.payload });
 
     default:
+      console.log(`unhandled action: ${action.type}`);
       return state;
   }
 }
