@@ -3,10 +3,28 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  '@angular2-material': 'vendor/@angular2-material',
+  '@ngrx': 'vendor/@ngrx'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  '@ngrx/store': {
+    format: 'cjs',
+    main: 'index.js'
+  },
+  '@angular2-material/core': {
+    format: 'cjs',
+    main: 'core.js'
+  },
+  '@angular2-material/checkbox': {
+    format: 'cjs',
+    main: 'checkbox.js'
+  },
+  '@angular2-material/button': {
+    format: 'cjs',
+    main: 'button.js'
+  }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -33,8 +51,6 @@ const barrels: string[] = [
   'app/components',
   'app/containers',
   /** @cli-barrel */
-
-  '@ngrx/store'
 ];
 
 const cliSystemConfigPackages: any = {};
@@ -50,7 +66,6 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
-    '@ngrx': 'vendor/@ngrx',
     'main': 'main.js'
   },
   packages: cliSystemConfigPackages
