@@ -22,13 +22,27 @@
 
   </md-toolbar>
 
-  <main class="card-container">
-    <md-card>
-      <md-card-title>ATM</md-card-title>
-      <md-card-content>
-        <du-huffelpuff-counter-container></du-huffelpuff-counter-container>
-      </md-card-content>
-    </md-card>
+  <main class="card-container mdl-grid">
+
+    <section class="mdl-cell mdl-cell--8-col">
+
+      <md-card>
+        <md-card-title>ATM</md-card-title>
+        <md-card-content>
+          <du-huffelpuff-counter-container></du-huffelpuff-counter-container>
+        </md-card-content>
+      </md-card>
+
+    <du-event-list-container></du-event-list-container>
+
+    </section>
+
+    <aside class="mdl-cell mdl-cell--4-col">
+
+      <du-member-list title="Meetup members" [members]="members"></du-member-list>
+
+    </aside>
+
   </main>
 
 </md-sidenav-layout>

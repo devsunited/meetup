@@ -69,6 +69,9 @@ const barrels: string[] = [
   'app/reducers',
   'app/components',
   'app/containers',
+  'app/components/event-list',
+  'app/components/member-list',
+  'app/containers/event-list-container',
   /** @cli-barrel */
 ];
 

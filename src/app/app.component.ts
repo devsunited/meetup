@@ -7,7 +7,9 @@ import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 
 import { HuffelpuffCounterContainerComponent } from './containers/huffelpuff-counter-container/huffelpuff-counter-container.component';
+import { MemberListComponent } from './components/member-list/member-list.component';
 import { FirebaseDispatcherService } from "./shared/firebase-dispatcher.service";
+import { EventListContainerComponent } from './containers/event-list-container/event-list-container.component';
 
 @Component({
   moduleId: module.id,
@@ -18,7 +20,9 @@ import { FirebaseDispatcherService } from "./shared/firebase-dispatcher.service"
     MD_CARD_DIRECTIVES,
     MdIcon,
     MdToolbar,
-    HuffelpuffCounterContainerComponent
+    HuffelpuffCounterContainerComponent,
+    EventListContainerComponent,
+    MemberListComponent
   ],
   providers:[
     HTTP_PROVIDERS,
@@ -29,5 +33,11 @@ import { FirebaseDispatcherService } from "./shared/firebase-dispatcher.service"
   styleUrls: ['app.component.css']
 })
 export class AppComponent {
+  members = [
+    {name:'Martin',avatar:'https://pbs.twimg.com/profile_images/1260072436/180446_1595567813812_1374451847_31458096_4888846_n_400x400.jpg',twitter:'https://twitter.com/martin_hotell', handle:'martin_hotell'},
+    {name:'Mario',avatar:'https://pbs.twimg.com/profile_images/725115436602392576/_Ugzec6Y_400x400.jpg',twitter:'https://twitter.com/mariovejlupek', handle:'mariovejlupek'},
+    {name:'Viliam',avatar:'https://pbs.twimg.com/profile_images/474126826789298176/1Nc82LuY.jpeg',twitter:'https://twitter.com/vireliam', handle:'vireliam'},
+  ];
+
   constructor(private fbSvc: FirebaseDispatcherService) {}
 }
