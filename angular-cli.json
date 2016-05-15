@@ -1,7 +1,7 @@
 {
   "project": {
     "version": "1.0.0-beta.1",
-    "name": "angular2-quickstart"
+    "name": "aa-du"
   },
   "apps": [
     {"main": "src/main.ts", "tsconfig": "src/tsconfig.json"}
@@ -19,7 +19,7 @@
     }
   },
   "defaults": {
-    "prefix": "app",
+    "prefix": "du",
     "sourceDir": "src"
   }
 }
