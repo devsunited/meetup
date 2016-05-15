@@ -1,2 +1,2 @@
-export {environment} from './environment';
-export {Angular2QuickstartAppComponent} from './angular2-quickstart.component';
+export { AppComponent } from './app.component';
+export { environment } from './environment';
