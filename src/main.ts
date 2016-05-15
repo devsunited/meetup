@@ -3,8 +3,7 @@ import { enableProdMode } from '@angular/core';
 import { provideStore } from '@ngrx/store';
 import {FIREBASE_PROVIDERS, defaultFirebase} from 'angularfire2';
 
-import { AppComponent, environment } from './app';
-import { huffelpuffCounter } from './app/reducers';
+import { AppComponent, environment, huffelpuffCounter } from './app';
 
 
 if (environment.production) {
