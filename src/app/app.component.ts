@@ -7,6 +7,7 @@ import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 
 import { HuffelpuffCounterContainerComponent } from './containers/huffelpuff-counter-container/huffelpuff-counter-container.component';
+import { FirebaseDispatcherService } from "./shared/firebase-dispatcher.service";
 
 @Component({
   moduleId: module.id,
@@ -21,9 +22,12 @@ import { HuffelpuffCounterContainerComponent } from './containers/huffelpuff-cou
   ],
   providers:[
     HTTP_PROVIDERS,
-    MdIconRegistry
+    MdIconRegistry,
+    FirebaseDispatcherService
   ],
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css']
 })
-export class AppComponent { }
+export class AppComponent {
+  constructor(private fbSvc: FirebaseDispatcherService) {}
+}
